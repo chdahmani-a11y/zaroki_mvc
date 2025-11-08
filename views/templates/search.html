@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recherche</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">Recherche par compétence</div>
+
+<div class="container">
+
+    <form method="POST">
+        <label>Entrez une compétence :</label>
+        <input type="text" class="input-box" name="skill" placeholder="ex: Python" required>
+        <button class="btn-main">Rechercher</button>
+    </form>
+
+    <hr>
+
+    {% if results %}
+        <h3>Résultats :</h3>
+        {% for m in results %}
+        <div class="member-card">
+            <strong>{{ m.family_name }} {{ m.first_name }}</strong> ({{ m.subscription_status }})
+        </div>
+        {% endfor %}
+    {% elif request.method == "POST" %}
+        <p>Aucun membre trouvé avec cette compétence.</p>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

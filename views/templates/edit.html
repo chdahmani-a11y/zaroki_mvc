@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Modifier membre: {{ member.student_id }}</h2>
+<form method="post">
+  <label>Nom: <input name="family_name" value="{{ member.family_name }}"></label><br>
+  <label>Prénom: <input name="first_name" value="{{ member.first_name }}"></label><br>
+  <label>Email: <input name="email" value="{{ member.email }}"></label><br>
+  <label>Téléphone: <input name="phone" value="{{ member.phone }}"></label><br>
+  <label>Adresse: <input name="address" value="{{ member.address }}"></label><br>
+  <label>Date d'adhésion: <input name="join_date" value="{{ member.join_date }}"></label><br>
+  <label>Statut: <input name="subscription_status" value="{{ member.subscription_status }}"></label><br>
+  <label>Skills: <input name="skills" value="{{ member.skills|default('') }}"></label><br>
+  <label>Interests: <input name="interests" value="{{ member.interests|default('') }}"></label><br>
+  <button type="submit">Enregistrer</button>
+</form>
+{% endblock %}

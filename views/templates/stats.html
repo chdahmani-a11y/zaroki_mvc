@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Statistiques</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">📊 Statistiques Générales</div>
+
+<div class="container">
+
+    <h3>Total des membres : {{ total_members }}</h3>
+
+    <h3>État des abonnements :</h3>
+    <pre>{{ subscription_stats }}</pre>
+
+    <h3>Compétences les plus populaires :</h3>
+    <pre>{{ top_skills }}</pre>
+
+    <h3>Évolution des membres payés par mois :</h3>
+    <img src="/stats/plot" width="600">
+
+</div>
+
+</body>
+</html>

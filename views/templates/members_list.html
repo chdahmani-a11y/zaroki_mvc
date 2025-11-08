@@ -1,0 +1,23 @@
+<!-- templates/members_list.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Liste des membres</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>Liste des membres</h2>
+    <a href="{{ url_for('search') }}"><button>🔍 Rechercher par compétence</button></a>
+    <a href="{{ url_for('stats') }}"><button>📊 Statistiques</button></a>
+    <hr>
+    {% for m in members %}
+      <div class="member-card">
+        <strong>{{ m.family_name }} {{ m.first_name }}</strong> - {{ m.subscription_status }}
+        <br><small>Email: {{ m.email }} | Téléphone: {{ m.phone }}</small>
+      </div>
+    {% endfor %}
+  </div>
+</body>
+</html>

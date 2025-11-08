@@ -1,0 +1,26 @@
+student_id;skill_category;skill_name
+1;Technical;JavaScript
+1;Technical;Python
+1;Technical;React
+1;Technical;SQL
+1;Technical;Machine Learning
+1;Soft;Teamwork
+1;Soft;Problem-solving
+1;Soft;Communication
+3;Soft;Time Management
+3;Soft;Cultural Awareness 
+3;Soft;Problem-solving
+3;Soft;Empathy
+3;Soft;Customer Service
+4;Soft;Delegation
+4;Soft;Emotional Intelligence
+4;Soft;Negotiation
+5;Soft;Interpersonal Skills
+5;Soft;Empathy
+5;Soft;Mentoring
+5;Soft;Collaboration
+6;Soft;Public Speaking
+6;Soft;Critical Thinking
+6;Soft;Attention to Detail
+
+

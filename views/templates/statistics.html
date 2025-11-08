@@ -1,0 +1,35 @@
+<!-- templates/statistics.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Statistiques - Club Scientifique</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Statistiques du club</h1>
+
+    <h3>Total membres: {{ total_members }}</h3>
+
+    <h4>Subscription status</h4>
+    <ul>
+      {% for k, v in subscription_stats.items() %}
+        <li>{{ k }} : {{ v }}</li>
+      {% endfor %}
+    </ul>
+
+    <h4>Top compétences</h4>
+    <ul>
+      {% for k, v in top_skills.items() %}
+        <li>{{ k }} : {{ v }}</li>
+      {% endfor %}
+    </ul>
+
+    <h4>Paid subscriptions over time</h4>
+    <img src="{{ url_for('stats_plot_png') }}" alt="Paid subscriptions plot">
+
+    <p><a href="{{ url_for('index') }}">← revenir à la liste</a></p>
+  </div>
+</body>
+</html>
