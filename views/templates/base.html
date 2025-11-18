@@ -3,11 +3,14 @@
 <head>
   <meta charset="utf-8">
   <title>Club Scientifique Chahira.Cylia</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
   <style>
     body{font-family:Arial, sans-serif;margin:20px;}
     table{border-collapse:collapse;width:100%}
     th,td{border:1px solid #ddd;padding:6px;text-align:left}
-    th{background:#f0f0f0}
+    th{background:#be2525}
     .flash{padding:8px;margin:8px 0;border-radius:4px}
     .success{background:#e6ffed}
     .error{background:#ffdede}
@@ -15,13 +18,17 @@
   </style>
 </head>
 <body>
-  <h1>Club Scientifique Zaroki</h1>
-  <nav>
+
+  <h1>Club Scientifique Cylia.Chahira</h1>
+
+  <nav>  
     <a href="{{ url_for('index') }}">Accueil</a> |
     <a href="{{ url_for('search') }}">Recherche par compétence</a> |
     <a href="{{ url_for('stats') }}">Statistiques</a>
   </nav>
+
   <hr>
+
   {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
       {% for category, msg in messages %}
@@ -29,6 +36,8 @@
       {% endfor %}
     {% endif %}
   {% endwith %}
+
   {% block content %}{% endblock %}
+
 </body>
 </html>

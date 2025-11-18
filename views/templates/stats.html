@@ -1,25 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Statistiques</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <meta charset="UTF-8">
+    <title>Statistiques</title>   
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
+
 <body>
 
-<div class="navbar">📊 Statistiques Générales</div>
+<div class="navbar">📊 Statistiques des membres</div>
 
 <div class="container">
 
-    <h3>Total des membres : {{ total_members }}</h3>
+    <h2>Statistiques générales</h2>
 
-    <h3>État des abonnements :</h3>
-    <pre>{{ subscription_stats }}</pre>
+    <div class="stats-box">
+        <p><strong>Total des membres :</strong> {{ stats.total_members }}</p>
 
-    <h3>Compétences les plus populaires :</h3>
-    <pre>{{ top_skills }}</pre>
+        <h3>Statut des abonnements</h3>
+        <ul>
+            {% for key, value in stats.subscription_stats.items() %}
+                <li>{{ key }} : {{ value }}</li>
+            {% endfor %}
+        </ul>
 
-    <h3>Évolution des membres payés par mois :</h3>
-    <img src="/stats/plot" width="600">
+        <h3>Top 10 compétences les plus fréquentes</h3>
+        <ul>
+            {% for skill, count in stats.top_skills.items() %}
+                <li>{{ skill }} : {{ count }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <hr>
+
+    <h2>Courbe des inscriptions payées par mois</h2>
+
+    <div class="img-container">
+        <img src="/stats/plot" alt="Graphique des abonnements" style="width:70%; border:1px solid #ccc; padding:10px;">
+    </div>
+
+    <br>
+    <a href="/" class="btn-main">🏠 Retour à l'accueil</a>
 
 </div>
 

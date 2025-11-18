@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des Événements</title>  
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+
+<h2>Événements</h2>
+
+{% for e in events %}
+<div>
+    <strong>{{ e.event_name }}</strong> — {{ e.role }}
+    <br>
+    Membre ID : {{ e.member_id }}
+    <br>
+    Organisation : {{ e.organization }}
+    <br>
+    Description : {{ e.description }}
+    <hr>
+</div>
+{% endfor %}
+
+</body>
+</html>

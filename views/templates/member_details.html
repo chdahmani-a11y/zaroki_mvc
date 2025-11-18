@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Détails du membre</title>  
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+
+<div class="navbar">Détails du membre</div>
+
+<div class="container">
+
+    <h2>{{ member.family_name }} {{ member.first_name }}</h2>
+    <p><strong>Email :</strong> {{ member.email }}</p>
+    <p><strong>Téléphone :</strong> {{ member.phone }}</p>
+    <p><strong>Adresse :</strong> {{ member.address }}</p>
+    <p><strong>Statut :</strong> {{ member.subscription_status }}</p>
+
+    <hr>
+    <h3>📅 Événements</h3>
+    {% for e in events %}
+        <div class="member-card">
+            <strong>{{ e.event_name }}</strong><br>
+            Organisation : {{ e.organization }}<br>
+            Rôle : {{ e.role }}
+        </div>
+    {% else %}
+        <p>Aucun événement trouvé.</p>
+    {% endfor %}
+
+    <hr>
+    <h3>⭐ Centres d'intérêt</h3>
+    {% for i in interests %}
+        <div class="member-card">
+            {{ i.interest_name }} ({{ i.interest_category }})
+        </div>
+    {% else %}
+        <p>Aucun intérêt trouvé.</p>
+    {% endfor %}
+
+    <br>
+    <a href="/" class="btn-main">⬅ Retour</a>
+
+</div>
+
+</body>
+</html>

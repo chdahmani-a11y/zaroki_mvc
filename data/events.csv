@@ -1,0 +1,24 @@
+event_id;member_id;event_name;organization;role;start_date;description
+1;1;Language Exchange Program;Cultural Exchange Association;Coordinator;;Led a team of 20 students in organizing coding competitions and workshops.
+2;1;Charity Fundraiser;Local Community Center;Organizer;;
+3;1;Public Speaking Workshop;Toastmasters International;Participant;;
+4;1;Journalism Club;University Newspaper;Editor;;
+5;2;Astronomy Club;Science and Astronomy Society;Vice President;;
+6;2;Science Fair;National Science Association;Participant;;
+7;2;Robotics Club;Tech High School;Team Leader;;
+8;2;Environmental Club;Green World University;Volunteer;;
+9;3;Charity Fundraiser;Local Community Center;Organizer;;
+10;3;Debating Workshop;National Debate Association;Trainer;;
+11;3;Fitness Club;City Health Club;Member;;
+12;3;Swimming Team;Sports Club;Swimmer;;
+13;4;Yoga and Meditation Club;Health and Wellness Center;Instructor;;
+14;4;Red Cross Society;Local Community Center;Volunteer;;
+15;4;First Aid Training;Red Cross Society;Trainee;;
+16;5;Math Olympiad;National Mathematics Association;Competitor;;
+17;5;Photography Club;Creative Arts Institute;Secretary;;
+18;5;Astronomy Club;Science and Astronomy Society;Vice President;;
+19;6;Cooking Club;Community College;Member;;
+20;6;Entrepreneurship Club;Business School ABC;Co-Founder;;
+21;6;Science Fair;National Science Association;Participant;;
+22;7;Public Speaking Workshop;Toastmasters International;Participant;;
+23;7;Language Exchange Program;Cultural Exchange Association;Coordinator;;

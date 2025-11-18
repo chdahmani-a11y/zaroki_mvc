@@ -2,6 +2,9 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>Liste des membres (affichage limité)</h2>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 <table>
   <thead><tr><th>ID</th><th>Nom</th><th>Prénom</th><th>Email</th><th>Statut</th><th>Actions</th></tr></thead>
   <tbody>

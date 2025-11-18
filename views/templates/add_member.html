@@ -1,29 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Ajouter membre</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-</head>
-<body class="container py-4">
+    <meta charset="UTF-8">
+    <title>Ajouter un membre</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-<h2 class="mb-3">➕ Ajouter un membre</h2>
-
-<form method="POST">
-    <input class="form-control mb-2" name="student_id" placeholder="ID Étudiant" required>
-    <input class="form-control mb-2" name="family_name" placeholder="Nom" required>
-    <input class="form-control mb-2" name="first_name" placeholder="Prénom" required>
-    <input class="form-control mb-2" name="email" placeholder="Email" required>
-    <input class="form-control mb-2" name="phone" placeholder="Téléphone">
-    <input class="form-control mb-2" name="address" placeholder="Adresse">
-    <input class="form-control mb-2" name="join_date" placeholder="Date d'adhésion">
-    <select class="form-control mb-3" name="subscription_status">
-        <option value="paid">Payé</option>
-        <option value="pending">En attente</option>
-    </select>
     
-    <button class="btn btn-success">Enregistrer</button>
-</form>
+</head>
+<body>
 
-<a href="/" class="btn btn-secondary mt-2">Retour</a>
+<div class="navbar">Ajouter un membre</div>
+
+<div class="container">
+
+    <h2>Formulaire d'ajout</h2> 
+
+    <form method="POST">
+
+        <label>ID Étudiant</label>
+        <input type="text" name="student_id" required>
+
+        <label>Nom</label>
+        <input type="text" name="family_name" required>
+
+        <label>Prénom</label>
+        <input type="text" name="first_name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Téléphone</label>
+        <input type="text" name="phone">
+
+        <label>Adresse</label>
+        <input type="text" name="address">
+
+        <label>Date d’adhésion</label>
+        <input type="text" name="join_date">
+
+        <label>Statut</label>
+        <select name="subscription_status">
+            <option value="paid">paid</option>
+            <option value="pending">pending</option>
+        </select>
+
+        <button type="submit" class="btn-main">Ajouter</button>
+    </form>
+
+</div>
+
 </body>
 </html>

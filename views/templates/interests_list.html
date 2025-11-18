@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Centres d'intérêt</title>  
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+
+<h2>Centres d'intérêt</h2>
+
+{% for i in interests %}
+<div>
+    <strong>{{ i.interest_name }}</strong> ({{ i.interest_category }})
+    <br>
+    Membre ID : {{ i.member_id }}
+    <hr>
+</div>
+{% endfor %}
+
+</body>
+</html>

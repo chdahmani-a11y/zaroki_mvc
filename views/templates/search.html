@@ -1,35 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <title>Recherche</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
+<head><meta charset="utf-8"><title>Recherche</title></head>
 <body>
+  <h2>Recherche par compétence</h2>  
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-<div class="navbar">Recherche par compétence</div>
+  <form method="post">
+    <input type="text" name="skill" placeholder="ex: python" required>
+    <button type="submit">Rechercher</button>
+  </form>
 
-<div class="container">
-
-    <form method="POST">
-        <label>Entrez une compétence :</label>
-        <input type="text" class="input-box" name="skill" placeholder="ex: Python" required>
-        <button class="btn-main">Rechercher</button>
-    </form>
-
-    <hr>
-
+  {% if results is not none %}
+    <h3>Résultats</h3>
     {% if results %}
-        <h3>Résultats :</h3>
-        {% for m in results %}
-        <div class="member-card">
-            <strong>{{ m.family_name }} {{ m.first_name }}</strong> ({{ m.subscription_status }})
-        </div>
-        {% endfor %}
-    {% elif request.method == "POST" %}
-        <p>Aucun membre trouvé avec cette compétence.</p>
+      <ul>
+      {% for m in results %}
+        <li>{{ m.student_id }} - {{ m.family_name }} {{ m.first_name }} ({{ m.subscription_status }})</li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>Aucun membre trouvé.</p>
     {% endif %}
-
-</div>
-
+  {% endif %}
+  <p><a href="{{ url_for('index') }}">Retour</a></p>
 </body>
 </html>

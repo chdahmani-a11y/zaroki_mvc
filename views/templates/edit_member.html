@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>Modifier membre: {{ member.student_id }}</h2>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 <form method="post">
   <label>Nom: <input name="family_name" value="{{ member.family_name }}"></label><br>
   <label>Prénom: <input name="first_name" value="{{ member.first_name }}"></label><br>
